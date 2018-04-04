@@ -6,5 +6,7 @@ brew install bash-completion coreutils dos2unix fontconfig handbrake maven mysql
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
+pip install --user powerline-status
+
 chsh -s $(which zsh)
 rm -f ~/.zcompdump; compinit
