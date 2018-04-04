@@ -8,8 +8,8 @@ git submodule update --init --recursive || true
 rm -rf $HOME/.dotfiles
 ln -s $SCRIPTPATH/. $HOME/.dotfiles
 
-rm -f $HOME/.dircolors
-ln -s $SCRIPTPATH/.dircolors $HOME/.dircolors
+rm -f $HOME/.dir_colors
+ln -s $SCRIPTPATH/.dir_colors $HOME/.dir_colors
 
 rm -f $HOME/.Xresources
 ln -s $SCRIPTPATH/.Xresources $HOME/.Xresources

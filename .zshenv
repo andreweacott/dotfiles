@@ -7,7 +7,7 @@ if [ -d "/usr/local/bin" ] ; then
 fi
 
 
-eval $(dircolors $HOME/.dircolors)
+eval $(dircolors $HOME/.dir_colors)
 
 alias ls="ls --color=tty"
 alias wd="cd $HOME/dev/code/projects"
