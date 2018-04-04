@@ -1,0 +1,6 @@
+[submodule "thirdparty/oh-my-zsh"]
+	path = thirdparty/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "thirdparty/powerlevel9k"]
+	path = thirdparty/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
