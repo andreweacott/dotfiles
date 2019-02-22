@@ -113,11 +113,18 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval `dircolors ~/.dir_colors`
-alias ls="ls --color=tty"
-alias wd="cd /Users/eacotta/dev/code/projects"
-export JAVA_HOME=$(/usr/libexec/java_home)
+#eval `dircolors ~/.dir_colors`
+alias ls="ls -G"
+alias wd="cd /Users/andreweacott/dev/code/projects"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-eval $(thefuck --alias fix)
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -s "/Users/andreweacott/.jabba/jabba.sh" ] && source "/Users/andreweacott/.jabba/jabba.sh"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+alias pg_start="pg_ctl -D /usr/local/var/postgres start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
