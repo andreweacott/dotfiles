@@ -4,3 +4,6 @@
 [submodule "thirdparty/powerlevel9k"]
 	path = thirdparty/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "thirdparty/git-open"]
+ 	path = thirdparty/git-open
+	url = https://github.com/paulirish/git-open.git

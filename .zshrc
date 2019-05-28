@@ -69,7 +69,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git-fast
+  gitfast
   git-extras
   aws
   common-aliases
@@ -115,16 +115,28 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 #eval `dircolors ~/.dir_colors`
 alias ls="ls -G"
-alias wd="cd /Users/andreweacott/dev/code/projects"
+alias wd="cd /Users/andreweacott/git/machine-relevance"
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 [ -s "/Users/andreweacott/.jabba/jabba.sh" ] && source "/Users/andreweacott/.jabba/jabba.sh"
+# Jabba (Java version management)
+if [[ -s "/Users/andreweacott/.jabba/jabba.sh" ]]; then
+  jabba use default
+ 
+  function __jabba_on_cd() {
+    [[ -f "./.jabbarc" ]] && echo "\n☕️⚡️ Setting Jabba JDK from .jabbarc in $PWD: $(cat .jabbarc | tr -d "\n")" && jabba use
+  }
+  chpwd_functions=(${chpwd_functions[@]} "__jabba_on_cd")
+fi
+
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 alias pg_start="pg_ctl -D /usr/local/var/postgres start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
+unsetopt SHARE_HISTORY
