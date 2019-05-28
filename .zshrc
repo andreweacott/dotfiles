@@ -77,6 +77,7 @@ plugins=(
   docker
   copydir
   gnu-utils
+  git-open
 )
 
 source $ZSH/oh-my-zsh.sh
