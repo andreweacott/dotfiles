@@ -27,6 +27,10 @@ rm -rf $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -s $SCRIPTPATH/thirdparty/powerlevel9k $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
+rm -rf $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+ln -s $SCRIPTPATH/thirdparty/powerlevel10k $HOME/.oh-my-zsh/custom/themes/powerlevel10k
+
+
 popd
 
 cleanup() {

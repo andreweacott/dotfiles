@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 
@@ -78,6 +78,7 @@ plugins=(
   copydir
   gnu-utils
   git-open
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -141,3 +142,8 @@ eval "$(pyenv virtualenv-init -)"
 alias pg_start="pg_ctl -D /usr/local/var/postgres start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop"
 unsetopt SHARE_HISTORY
+
+alias k="kubectl"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
