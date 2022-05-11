@@ -15,6 +15,7 @@ brew upgrade
 brew tap homebrew/cask-fonts
 
 # Install binaries
+brew install antigen
 brew install asciinema
 brew install awscli
 brew install bash-completion
