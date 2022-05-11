@@ -1,0 +1,31 @@
+[user]
+	name = Andrew Eacott
+	email = andrew@marmoset.org
+
+[includeIf "gitdir:~/git/work/"]
+  	path = ~/git/work/.gitconfig
+
+
+[diff]
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[alias]
+         push-upstream = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+         undo-commit = reset --soft HEAD^
+         unstage = reset HEAD
+
+[pull]
+	rebase = false
+
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
+
+[core]
+	excludesfile = $HOME/.git/.gitignore_global
+
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX 	
