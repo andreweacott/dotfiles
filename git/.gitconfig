@@ -2,8 +2,8 @@
 	name = Andrew Eacott
 	email = andrew@marmoset.org
 
-[includeIf "gitdir:~/git/work/"]
-  	path = ~/git/work/.gitconfig
+[includeIf "gitdir:~/git/"]
+  	path = ~/git/.gitconfig
 
 
 [diff]
