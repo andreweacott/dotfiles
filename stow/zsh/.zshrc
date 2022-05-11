@@ -8,17 +8,10 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
 source /usr/local/share/antigen/antigen.zsh
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle paulirish/git-open
-antigen bundle pip
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme romkatv/powerlevel10k
-antigen apply
+antigen init $HOME/.antigenrc
 
+ZSH_CUSTOM=$HOME/oh-my-zsh-custom-scripts
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -26,18 +19,6 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -55,9 +36,6 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -66,57 +44,35 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   gitfast
   git-extras
+  git-open
   aws
   common-aliases
   dirhistory
   docker
   copypath
   gnu-utils
-  git-open
   history-substring-search
   direnv
   kubectl
+  zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+ZSH_THEME="powerlevel10k"
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+#Update automatically every 13 days, without asking
+zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 13
+
+#source $ZSH/oh-my-zsh.sh
+
+
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-eval `dircolors ~/.dir_colors`
+eval `gdircolors ~/.dir_colors`
 
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 unsetopt SHARE_HISTORY
 
@@ -133,7 +89,6 @@ export LDFLAGS="-L/usr/local/opt/openssl@3/lib -L/usr/local/opt/zlib/lib -L/usr/
 export CPPFLAGS="-I/usr/local/opt/openssl@3/include -I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 
 [ -s "$HOME/.jabba/jabba_profile.sh" ] && source "$HOME/.jabba/jabba_profile.sh"
-#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 alias k="kubectl"
 alias ls="ls -G"
