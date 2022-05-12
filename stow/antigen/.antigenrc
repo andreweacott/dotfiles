@@ -3,11 +3,10 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle docker
+antigen bundle direnv
 antigen bundle pip
 antigen bundle paulirish/git-open
-
-#Must be the last bundle in list
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 antigen theme romkatv/powerlevel10k
 

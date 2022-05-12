@@ -44,7 +44,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   gitfast
   git-extras
-  git-open
   aws
   common-aliases
   dirhistory
@@ -52,19 +51,15 @@ plugins=(
   copypath
   gnu-utils
   history-substring-search
-  direnv
   kubectl
-  zsh-syntax-highlighting
 )
-
-ZSH_THEME="powerlevel10k"
 
 #Update automatically every 13 days, without asking
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 13
 
-#source $ZSH/oh-my-zsh.sh
-
+source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # User configuration
