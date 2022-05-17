@@ -86,7 +86,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl@3/include -I/usr/local/opt/zlib/includ
 [ -s "$HOME/.jabba/jabba_profile.sh" ] && source "$HOME/.jabba/jabba_profile.sh"
 
 alias k="kubectl"
-alias ls="ls -G"
+alias ls="ls -G --color=auto"
 alias wd="cd $HOME/git"
 ssh-add -K ~/.ssh/id_rsa
 
