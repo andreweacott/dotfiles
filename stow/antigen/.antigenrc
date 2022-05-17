@@ -7,6 +7,7 @@ antigen bundle direnv
 antigen bundle pip
 antigen bundle paulirish/git-open
 antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen theme romkatv/powerlevel10k
 
