@@ -66,6 +66,7 @@ brew install stow
 brew install tldr
 brew install tmux
 brew install tree
+brew install vivid
 brew install webp
 brew install wget
 brew install yarn
