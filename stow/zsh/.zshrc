@@ -11,7 +11,7 @@ export ZSH=$HOME/.oh-my-zsh
 #Note - this alias must be before 'antigen init' so that solarised ls colors work correctly on OSX
 alias dircolors='gdircolors'
 
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 antigen init $HOME/.antigenrc
 
 ZSH_CUSTOM=$HOME/oh-my-zsh-custom-scripts
@@ -62,7 +62,7 @@ zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 13
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -90,7 +90,7 @@ export CPPFLAGS="-I/usr/local/opt/openssl@3/include -I/usr/local/opt/zlib/includ
 
 alias k="kubectl"
 alias wd="cd $HOME/git"
-ssh-add -K ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
 
 export KUBECONFIG=~/.kube/config
 
