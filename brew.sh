@@ -14,6 +14,12 @@ brew upgrade
 
 brew tap homebrew/cask-fonts
 
+
+brew install --cask iterm2
+brew install --cask atom
+brew install --cask visual-studio-code
+
+
 # Install binaries
 brew install antigen
 brew install asciinema
@@ -22,13 +28,15 @@ brew install bash-completion
 brew install ack
 brew install bat
 brew install bzip2
-brew install buf
+brew install bufbuild/buf/buf
 brew install coreutils
 brew install ctop
 brew install direnv
 brew install diff-so-fancy
 brew install docker-compose
 brew install dos2unix
+
+brew tap ktr0731/evans
 brew install evans
 brew install exa
 brew install flake8
